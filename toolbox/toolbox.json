@@ -4,5 +4,11 @@
   	"title": "Contrast Color Generator",
   	"description": "Generates contrast colors from an input color according to contrast ratio accessibility standards",
     "type": "Color, Generator, Accessibility"
+  },
+  {
+    "dir": "/contrast-color/",
+    "title": "Contrast Color Checker",
+    "description": "Generates contrast colors from an input color according to contrast ratio accessibility standards",
+    "type": "Color, Generator, Accessibility"
   }
 ]

@@ -23,6 +23,7 @@ html {
   --shadow-text: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.6);
   --shadow-text-black: 0px 0px 1em var(--color-black);
   --shadow-text-headers: 0.1em 0.1em 1px var(--color-background);
+  --shadow-text-headers-full: 0.1em 0.1em 1px var(--color-background), 0em 0em 1em rgba(0, 0, 0, 0.6);
   --shadow-box: 3px 3px 6px rgba(0,0,0,0.16);
   --selection-white: hsla(0, 0%, 100%, 0.5);
   --selection-colored: hsla(var(--hue-foreground), 100%, 70%, 0.5);
@@ -271,6 +272,12 @@ main .content-container > section > h2 {
   flex-grow: 1;
   margin-right: 0.5em;
   margin-bottom: 0.5em;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+#project-nav ul li:focus, #project-nav ul li:hover {
+  transform: scale(1.03);
 }
 
 /* Change to column nav on larger screens */
@@ -291,24 +298,23 @@ main .content-container > section > h2 {
 }
 
 #project-nav ul li button {
+  position: relative;
   width: 100%;
-  border-radius: 0.5rem;
   color: inherit;
   font: inherit;
   text-align: left;
-  text-shadow: var(--shadow-text);
   padding: 1em;
   cursor: pointer;
   transition: padding 0.2s ease-out;
   border: none;
-  background-repeat: no-repeat;
   background-position: center;
-  background-size: auto;
+  background-size: cover;
   box-shadow: var(--shadow-box);
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   outline: none;
+  z-index: 1;
+  background-color: rgba(0,0,0,0);
 }
 
 #project-nav ul li button:focus, #project-nav ul li button:hover {
@@ -319,7 +325,6 @@ main .content-container > section > h2 {
 #project-nav ul li button.inactive:focus, #project-nav ul li button.inactive:hover {
   padding: 1em 1em;
   opacity: 0.9;
-  transform: scale(1.03);
 }
 
 #project-nav ul li button.inactive {
@@ -343,12 +348,12 @@ main .content-container > section > h2 {
 
 #project-nav h3 {
   font-size: var(--font-size-text-large);
-  text-shadow: var(--shadow-text-headers);
+  text-shadow: var(--shadow-text-headers-full);
 }
 
 #project-nav p {
   font-size: var(--font-size-text);
-  text-shadow: var(--shadow-text-headers);
+  text-shadow: var(--shadow-text-headers-full);
 }
 
 
