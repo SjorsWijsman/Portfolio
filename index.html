@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="style/art/icon.png">
+  <link href="style/style.css" rel="stylesheet">
+  <!-- svg inject import -->
+  <script src="scripts/svg-inject.min.js"></script>
+  <!-- Vue import -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <!-- Font import -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <title>Under Construction</title>
+</head>
+<body id="portfolio">
+  <header>
+    <div class="header-box">
+      <h1>Sjors Wijsman</h1>
+      <h2>Finding creative <span class="solutions">so</span><span id="lasers-text" onclick="lasers()">l</span><span class="solutions">utions</span> since '<input type="number" id="lasers-amount" value="99"></h2>
+    </div>
+    <div class="wave-container">
+      <img src="style/art/wave.svg" onload="SVGInject(this)">
+      <img src="style/art/wave.svg" onload="SVGInject(this)">
+      <img src="style/art/wave.svg" onload="SVGInject(this)">
+      <img src="style/art/wave.svg" onload="SVGInject(this)">
+      <img src="style/art/wave.svg" onload="SVGInject(this)">
+      <img src="style/art/wave.svg" onload="SVGInject(this)">
+      <img src="style/art/wave.svg" onload="SVGInject(this)">
+      <img src="style/art/wave.svg" onload="SVGInject(this)">
+    </div>
+    <canvas id="starfield"></canvas>
+  </header>
+
+  <main>
+    <div class="content-container">
+      <section id="about-me">
+        <h2>About Me</h2>
+        <p>Some bullshit about what I do and shit</p>
+        <a href="#contact"><h3>Contact Me</h3><p>Get in contact with me!</p></a>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+          <nav id="project-nav">
+            <ul>
+              <li v-for="(project,index) in projects">
+                <button :style="{ backgroundImage: 'url(projects' + project.dir + 'thumbnail.jpg)' }" @click="viewProject(index, project.dir)" @focus="viewProject(index, project.dir)">
+                  <h3>{{ project.title }}</h3>
+                  <p>{{ project.type }}<p>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <div>
+            <article id="project-view">
+              <img :src="'projects' + project.meta.dir + 'thumbnail.jpg'" alt="">
+              <section class="links">
+                <a v-for="link in project.links" :href="link.link" target="_blank">
+                  {{ link.title }}<img src="style/art/external-link.svg" onload="SVGInject(this)">
+                </a>
+              </section>
+              <section class="meta">
+                <h2>{{ project.meta.title }}</h2>
+                <p>{{ project.meta.tagline }}</p>
+                <p>{{ project.meta.type }} • {{ project.meta.for }} • {{ project.meta.date }}</p>
+              </section>
+              <section class="details">
+                <button class="expand" onclick="expandDetails()">More about this project</button>
+                <div class="details-container">
+                  <acticle v-for="(value, name) in project.details">
+                    <h3>{{ name }}:</h3><p>{{ value }}</p>
+                  </acticle>
+                </div>
+              </section>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="toolbox">
+        <h2>Toolbox</h2>
+        <div class="toolbox-container">
+          <a v-for="tool in toolbox" :href="'toolbox' + tool.dir" target="_blank">
+            <h2>{{ tool.title }}<span class="type"><br>{{ tool.type }}</span></h2>
+            <p>{{ tool.description }}</p>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <form id="contact" method="post" action="contact-form.php">
+      <h2>Contact Me!</h2>
+      <div class="form-container">
+        <label>Your Name
+          <input type="text" name="name" required>
+        </label>
+        <label>Your Email
+          <input type="email" name="email" required>
+        </label>
+        <label>Your Message
+          <textarea rows="5" name="message" required></textarea>
+        </label>
+        <div class="button-container">
+          <button type="submit">Send</button>
+        </div>
+      </div>
+    </form>
+    <div class="footer-container">
+      <span>Sjors Wijsman</span><span>Finding creative solutions since '99</span>
+    </div>
+  </footer>
+
+  <script src="scripts/portfolio.js" type="application/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="500" viewBox="0 0 500 500">
+  <defs>
+    <clipPath id="clip-external-link">
+      <rect width="500" height="500"/>
+    </clipPath>
+  </defs>
+  <g id="external-link" clip-path="url(#clip-external-link)">
+    <g id="external-link-2" data-name="external-link">
+      <path id="box" d="M225,75H50V450H425V275" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="50"/>
+      <path id="Path_2" data-name="Path 2" d="M175,325,450,50" fill="none" stroke-linecap="round" stroke-width="50"/>
+    </g>
+    <path id="Path_3" data-name="Path 3" d="M2520,50h150V200" transform="translate(-2220)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="50"/>
+  </g>
+</svg>

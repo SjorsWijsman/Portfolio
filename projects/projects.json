@@ -1,0 +1,22 @@
+[
+  {
+  	"dir": "/recipile/",
+  	"title": "Recipile",
+  	"type": "Desktop App"
+  },
+  {
+  	"dir": "/portfolio/",
+  	"title": "Portfolio",
+  	"type": "Website"
+  },
+  {
+  	"dir": "/plantyourfuture/",
+  	"title": "Plant Your Future",
+  	"type": "Physical Product"
+  },
+  {
+  	"dir": "/myosotis/",
+  	"title": "Myosotis",
+  	"type": "Physical Product"
+  }
+]
