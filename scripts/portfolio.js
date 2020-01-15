@@ -265,20 +265,20 @@ function lasers() {
     }
     var starfield = document.getElementById("starfield")
     // Toggle laser amount input
-    var laserAmount = document.getElementById("lasers-amount")
+    var laserAmount = document.getElementById("lasers-amount");
     laserAmount.classList.toggle("active");
+    laserAmount.removeAttribute("disabled");
     laserAmount.addEventListener("blur", validateLaserAmount);
     // If lasers easteregg is active after click, enable functionalities:
     if (laserText.classList.contains("active")) {
-      laserAmount.contentEditable = "true";
-      laserAmount.innerHTML = "01";
+      laserAmount.value = "01";
       starfield.style = "cursor: crosshair";
       starfield.addEventListener("click", drawLaser);
     }
     // If lasers easteregg is inactive after click, disable functionalities:
     else {
-      laserAmount.contentEditable = "false";
-      laserAmount.innerHTML = "99";
+      laserAmount.setAttribute("disabled", "true");
+      laserAmount.value = "99";
       starfield.style = "cursor: inherit";
       starfield.removeEventListener("click", drawLaser);
       foregroundHue = getComputedStyle(document.documentElement).getPropertyValue('--hue-foreground');
@@ -288,7 +288,7 @@ function lasers() {
 }
 
 function validateLaserAmount(event) {
-  var text = event.srcElement.innerHTML;
+  var text = event.srcElement.value;
   var newText = ""
   // Check if newtext is longer than 1 character
   // If longer, trim to 2 characters
@@ -306,14 +306,14 @@ function validateLaserAmount(event) {
     newText = "01"
   }
   // Set new text
-  event.srcElement.innerHTML = newText;
+  event.srcElement.value = newText;
 }
 
 // Get full length of border (borderLength), select a random location (randStart)
 // on that border and draw laser (ctx.moveTo()) from that side to pointer (ctx.lineTo)
 function drawLaser(event) {
   ctx = starfield.getContext("2d");
-  amount = parseInt(document.getElementById("lasers-amount").innerHTML, 10);
+  amount = parseInt(document.getElementById("lasers-amount").value, 10);
   // Draw laser for amount entered
   for (var i = 0; i < amount; i++) {
     ctx.beginPath();
