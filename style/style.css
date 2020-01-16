@@ -240,7 +240,7 @@ main .content-container > section > h1 {
 
 @media (min-width: 40rem) {
   #about-me .article-container {
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 3fr minmax(16em, 2fr);
   }
 }
 
@@ -296,8 +296,8 @@ main .content-container > section > h1 {
 #about-me .article-container ul {
   margin: 2rem;
   margin-top: 0.5rem;
+  margin-left: 3em;
   list-style-position: inside;
-  margin-left: 2em;
 }
 
 #about-me .article-container ul li {
@@ -429,11 +429,11 @@ main .content-container > section > h1 {
 /* Stop buttons from growing on smaller screens to prevent content jumping */
 @media (max-width: 40rem) {
   #project-nav ul li button:focus, #project-nav ul li button:hover {
-    padding-left: 1em;
+    padding: 1.5em;
   }
 
   #project-nav ul li button.active {
-    padding: 1em;
+    padding: 1.5em;
   }
 }
 
