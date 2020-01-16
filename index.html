@@ -36,13 +36,46 @@
   <main>
     <div class="content-container">
       <section id="about-me">
-        <h2>About Me</h2>
-        <p>hoi ik ben sjors ik ben 193 jaar oud en ik heb een hamster die flip heet. ik vind het heel luek om waebsaites te maken en ik ben er heeeeeeeel l goed in!! !! !1! ook kan ik heel goed die code met dat kopje koffie, haha. nouja dit ben ik dus, huur me in plz!</p>
-        <a href="#contact"><h3>Contact Me</h3><p>Get in contact with me!</p></a>
+        <h1>About Me</h1>
+        <div class="article-container">
+          <article>
+            <h2>Hi my name is Sjors Wijsman and I make stuff.</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestiae earum tempora amet illo vero, voluptatibus commodi! Veritatis autem natus quia, neque corporis.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum ex atque consectetur.</p>
+            <p>I am based near Amersfoort in the Netherlands and go to the
+              <a href="https://www.amsterdamuas.com/" target="_blank">University of Applied Sciences Amsterdam</a>
+              where I study <a href="https://www.hva.nl/opleiding/communication-and-multimedia-design/communication-and-multimedia-design.html" target="_blank">Communication & Multimedia Design (Dutch)</a>.
+              Currently I am in my second year.</p>
+            <nav>
+              <a href="#projects">Check out my previous projects</a>
+              <a href="#toolbox">Some handy tools I developed you might find useful or interesting</a>
+              <a href="#contact">Got a project you want me to work on with you? Get in contact with me!</a>
+            </nav>
+          </article>
+          <article id="can-do">
+            <h2>What I <span onclick="cantdo()">can</span> do for you:</h2>
+            <ul>
+              <li>Design Website</li>
+              <li>Make Website</li>
+              <li>Make cool stuff</li>
+              <li>Make really cool stuff (you'll have to pay more)</li>
+              <li>View some of my previous <a href="#projects">Projects</a> to see what I can do for you!</li>
+            </ul>
+          </article>
+          <article id="cant-do" class="hidden">
+            <h2>What I <span onclick="cantdo()">can't</span> do for you:</h2>
+            <ul>
+              <li>Anything that starts with: “It’s like Facebook/Twitter/Tinder but…”</li>
+              <li>Create the next YouTube</li>
+              <li>Meet your parents</li>
+              <li>Fix your failing marriage</li>
+              <li>Adopt you and fill the void your father left</li>
+            </ul>
+          </article>
+        </div>
       </section>
-
       <section id="projects">
-        <h2>Projects</h2>
+        <h1>Projects</h1>
         <div class="project-container">
           <nav id="project-nav">
             <ul>
@@ -81,7 +114,7 @@
       </section>
 
       <section id="toolbox">
-        <h2>Toolbox</h2>
+        <h1>Toolbox</h1>
         <div class="toolbox-container">
           <a v-for="tool in toolbox" :href="'toolbox' + tool.dir" target="_blank">
             <h2>{{ tool.title }}<span class="type"><br>{{ tool.type }}</span></h2>
@@ -94,7 +127,7 @@
 
   <footer>
     <form id="contact" method="post" action="contact-form.php">
-      <h2>Contact Me!</h2>
+      <h1>Contact Me!</h1>
       <div class="form-container">
         <label>Your Name
           <input type="text" name="name" required>

@@ -144,6 +144,8 @@ window.addEventListener("scroll", () => {
   }
 });
 
+
+
 //
 // ----------------
 // Projects
@@ -245,12 +247,12 @@ xmlhttp.open("GET", "toolbox/toolbox.json", true);
 xmlhttp.send();
 
 
+
 //
 // ----------------
 // Lasers easteregg
 // ----------------
 //
-
 function lasers() {
   var hover = window.matchMedia("(hover: hover)")
   // Check for pointer with hover capability
@@ -344,4 +346,16 @@ function drawLaser(event) {
     ctx.shadowColor = "hsla(" + laserHue + ", 100%, 60%, 0.5)";
     ctx.stroke();
   }
+}
+
+
+
+//
+// ----------------
+// Can't do easteregg
+// ----------------
+//
+function cantdo() {
+  document.getElementById("can-do").classList.toggle("hidden")
+  document.getElementById("cant-do").classList.toggle("hidden")
 }
